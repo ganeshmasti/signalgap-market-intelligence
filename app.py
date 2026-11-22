@@ -25,32 +25,26 @@ P = {'bg':'#08101d','card':'#101d30','line':'#26354b','text':'#ecf5ff',
      'muted':'#a0adc1','cyan':'#47d9db','violet':'#b4a3ff','amber':'#ffce76',
      'coral':'#ff8e91','green':'#76e5b0'}
 
-st.markdown(f"""
+st.markdown("""
 <style>
-  .stApp {{background:linear-gradient(135deg,#08121f 0%,#0b1221 56%,#120f25 100%); color:{P['text']};}}
-  [data-testid="stSidebar"] {{background:#0b1424; border-right:1px solid #233047;}}
-  .block-container {{max-width:1420px; padding-top:1.6rem; padding-bottom:5rem;}}
-  [data-testid="stMetric"] {{background:#121e31;border:1px solid #293950;padding:18px 18px;border-radius:16px;}}
-  [data-testid="stMetricLabel"] {{color:#a8b6cb;}}
-  div[data-testid="stMetricValue"] {{color:#f4faff; font-weight:750;}}
-  .hero {{background:linear-gradient(110deg,rgba(40,90,110,.29),rgba(74,39,117,.25));
-       border:1px solid #3c526c;border-radius:20px;padding:24px 30px;margin-bottom:14px;}}
-  .brand {{font-weight:800;font-size:2.35rem;letter-spacing:-.065rem;line-height:1.06;}}
-  .gradient {{background:linear-gradient(105deg,#71eff0,#c1a8ff);-webkit-background-clip:text;color:transparent;}}
-  .sub {{color:#b6c4d5;line-height:1.5;margin-top:10px;max-width:820px;}}
-  .eyebrow {{letter-spacing:.15rem;color:#75dfe8;text-transform:uppercase;font-size:12px;font-weight:750;}}
-  .pill {{display:inline-block;border:1px solid #38516b;border-radius:999px;padding:5px 11px;
-      font-size:.75rem;color:#b6cde3;margin-top:12px;margin-right:7px;}}
-  .callout {{border:1px solid #66502f;border-left:4px solid #ffc86c;background:rgba(112,78,25,.16);
-      border-radius:12px;padding:13px 18px;color:#f6deb0;margin:8px 0 16px;}}
-  .note {{background:#111f32;border:1px solid #293b55;border-radius:14px;padding:16px 19px;
-     color:#d8e5f6;line-height:1.65;}}
-  h1,h2,h3 {{letter-spacing:-.025rem;}}
-  div[data-testid="stTabs"] button {{font-weight:700;}}
-  a {{color:#69dbe2!important;}}
-  footer {{visibility:hidden;}}
+[data-testid="stSidebar"] {
+    background-color: #0B1424;
+}
+
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #F1F5F9;
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color: #F1F5F9;
+}
 </style>
-""",unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 @st.cache_data(show_spinner=False)
 def get_data():
