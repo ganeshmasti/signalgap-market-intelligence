@@ -1,0 +1,82 @@
+{
+  "label": "REAL HISTORICAL DATA (as provided)",
+  "assets": [
+    "AMZN",
+    "GOOGL",
+    "MSFT",
+    "NVDA",
+    "ORCL"
+  ],
+  "benchmark": "SPY",
+  "spectral_snapshots": 220,
+  "as_of": "2026-11-20",
+  "horizons": {
+    "5": {
+      "horizon_sessions": 5,
+      "regime": {
+        "future_dispersion": {
+          "n_windows": 178,
+          "baseline_mae": 0.01558596328392939,
+          "spectral_mae": 0.015599160281357853,
+          "spectral_mae_improvement_pct": -0.08467232462988117
+        },
+        "future_spy_vol": {
+          "n_windows": 178,
+          "baseline_mae": 0.00337901589934087,
+          "spectral_mae": 0.0034039600895469295,
+          "spectral_mae_improvement_pct": -0.7382087255323438
+        }
+      },
+      "direction": {
+        "n_predictions": 890,
+        "n_decision_dates": 178,
+        "baseline_brier": 0.25461550966099705,
+        "spectral_brier": 0.2601279499488136,
+        "baseline_accuracy": 0.5089887640449439,
+        "spectral_accuracy": 0.4910112359550562,
+        "baseline_mean_signed_excess_log_return": 9.842090746263693e-05,
+        "spectral_mean_signed_excess_log_return": 0.0005008363622454452,
+        "spectral_improves_brier": false
+      },
+      "caveat": "Research-only: overlapping outcomes, fixed survivorship-biased universe, and adjusted-close fills."
+    },
+    "20": {
+      "horizon_sessions": 20,
+      "regime": {
+        "future_dispersion": {
+          "n_windows": 172,
+          "baseline_mae": 0.029414433850361084,
+          "spectral_mae": 0.029333997796634315,
+          "spectral_mae_improvement_pct": 0.2734577661292701
+        },
+        "future_spy_vol": {
+          "n_windows": 172,
+          "baseline_mae": 0.0028765486875478126,
+          "spectral_mae": 0.002843918170241266,
+          "spectral_mae_improvement_pct": 1.1343634629860324
+        }
+      },
+      "direction": {
+        "n_predictions": 860,
+        "n_decision_dates": 172,
+        "baseline_brier": 0.2631109662474562,
+        "spectral_brier": 0.28340085496845535,
+        "baseline_accuracy": 0.4872093023255814,
+        "spectral_accuracy": 0.43488372093023253,
+        "baseline_mean_signed_excess_log_return": -0.001547817285061756,
+        "spectral_mean_signed_excess_log_return": -0.011210528272915347,
+        "spectral_improves_brier": false
+      },
+      "caveat": "Research-only: overlapping outcomes, fixed survivorship-biased universe, and adjusted-close fills."
+    }
+  },
+  "warnings": [
+    "No claim of predictive alpha is justified without independent holdout and confidence intervals.",
+    "Prices are adjusted closes; returns assume next-session-close entry, not market orders.",
+    "Five-stock fixed universe may be survivorship-biased; benchmark is excluded from spectral basket.",
+    "Spectral features are descriptive; high common-factor concentration is not directional.",
+    "Dates reflect US exchange sessions as represented by input; verify vendors and adjustments.",
+    "Repeated 5-/20-day targets overlap, and outcomes across stocks share risk factors.",
+    "This run uses only market-price and spectral features; no Inkling/expectation input yet."
+  ]
+}
